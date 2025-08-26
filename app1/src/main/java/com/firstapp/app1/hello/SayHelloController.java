@@ -21,6 +21,6 @@ public class SayHelloController {
     // /src/main/resources/META-INF/resources/WEB-INF/jsp/todos.jsp
     @RequestMapping(value = "hello_jsp")
     public String sayHelloJsp() {
-        return "sayHello From jsp";
+        return "sayHello";
     }
 }
