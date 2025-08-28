@@ -13,7 +13,7 @@ public class SayHelloController {
         return "Hello World,Finally Its Working";
     }
 
-    //
+
     // "say-hello-jsp" => sayHello.jsp
     // /src/main/resources/META-INF/resources/WEB-INF/jsp/sayHello.jsp
     // /src/main/resources/META-INF/resources/WEB-INF/jsp/welcome.jsp
