@@ -5,15 +5,18 @@
 </head>
 
 <body>
-	Welcome to the login page!
-	<form action="login_jsp" method="post">
-		Name: <input type="text" name="name"><br />
-		Password: <input type="password" name="password"><br />
-		<input type="submit" value="Login">
-	</form>
+		
+		<div class="container">
+			<h1>Login</h1>
+			<pre>${errorMessage}</pre>
+			<form method="post">
+				Name: <input type="text" name="name">
+				Password: <input type="password" name="password">
+				<input type="submit">
+			</form>
+		</div>
 
 
-	My first html page with login page - JSP
 </body>
 
 </html>
