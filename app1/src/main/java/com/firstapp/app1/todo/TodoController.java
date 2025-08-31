@@ -61,10 +61,24 @@ public class TodoController {
 		return "redirect:list-todos";
 	}
 
-	@RequestMapping("update-todos")
+	@GetMapping("update-todos")
 	public String showUpdatePage(@RequestParam int id, ModelMap model) {
 		Todo todo = todoService.findById(id);
 		model.addAttribute("todo", todo); // 👈 required
+		return "todos";
+	}
+
+
+	@PostMapping("update-todos")
+	public String UpdateTodo( ModelMap model,@Valid Todo todo, BindingResult result) {
+
+		if (result.hasErrors()) {
+			return "todos";
+		}
+
+		String user = (String) model.get("name");
+		todo.setUsername(user);
+		todoService.updateTodo(todo);
 		return "todos";
 	}
 
