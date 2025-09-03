@@ -1,5 +1,4 @@
 <html>
-
 <head>
 	<title>Welcome Page</title>
 </head>

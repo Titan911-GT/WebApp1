@@ -18,17 +18,20 @@ private static List<Todo> todos = new ArrayList<>();
 	public static int TodoCount=0;
 
 	static {
-		todos.add(new Todo(++TodoCount, "in28minutes","Get AWS Certified", 
+		todos.add(new Todo(++TodoCount, "user","Get AWS Certified 1", 
 							LocalDate.now().plusYears(1), false ));
-		todos.add(new Todo(++TodoCount, "in28minutes","Learn DevOps", 
+		todos.add(new Todo(++TodoCount, "user","Learn DevOps 1", 
 				LocalDate.now().plusYears(2), false ));
-		todos.add(new Todo(++TodoCount, "in28minutes","Learn Full Stack Development", 
+		todos.add(new Todo(++TodoCount, "user","Learn Full Stack Development 1", 
 				LocalDate.now().plusYears(3), false ));
 	}
 	
 
     public List<Todo> findByUsername(String Username){
-        return todos;
+				Predicate<? super Todo> Predicate =
+				 todo -> todo.getUsername().equalsIgnoreCase(Username);
+
+        return todos.stream().filter(Predicate).toList();
     }
 
 	public void addTodo(String username,String description,LocalDate targeDate,boolean done){
